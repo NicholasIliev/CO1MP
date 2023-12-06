@@ -1,0 +1,6 @@
+{
+	"id": 4,
+	"title": "File Extension Getter",
+	"difficulty": "Medium",
+	"description": "Write a program to accept a filename from the user and print the extension of that."
+}

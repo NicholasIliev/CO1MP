@@ -1,0 +1,50 @@
+{% extends 'template.html' %}
+{% block content %}
+<div class="background-sign-in">
+    <div class="form-box">
+        <div class="button-box">
+            <div id="btn"></div>
+            <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+            <button type="button" class="toggle-btn" onclick="register()">Register</button>
+        </div>
+        <form id="login" class="input-group" action="{{ url_for('login') }}", method="POST">
+            <input type="text" name="log_username" class="input-field" placeholder="Username" required>
+            <input type="password" name="log_password" class="input-field" placeholder="Password" required>
+            <button type="submit" class="submit-btn">Log in</button>
+        </form>
+        <form id="register" class="input-group" action="{{ url_for('login') }}", method="POST">
+            <input type="text" name="reg_username" class="input-field" placeholder="Username" required>
+            <input type="email" name="reg_email" class="input-field" placeholder="Email" required>
+            <input type="password" name="reg_password" class="input-field" placeholder="Password" required>
+            <input type="checkbox" class="check-box"><span class="login-span">I agree to the <a href="{{ url_for('terms')}}">terms & conditions</a></span>
+            <button type="submit" class="submit-btn">Register</button>
+        </form>
+        {% if valid != "Logged In" and valid != False %}
+        <p style="color: red">Could not Log-in/Register: {{ valid }}</p>
+        {% endif %}
+        <div class="login-logo">
+            <a href="">
+                <img src="static/images/COMP_logo2.png" class="logo2">
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+var x = document.getElementById("login");
+var y = document.getElementById("register");
+var z = document.getElementById("btn");
+
+function register(){
+    x.style.left = "-400px";
+    y.style.left = "50px";
+    z.style.left = "110px";
+}
+function login(){
+    x.style.left = "50px";
+    y.style.left = "450px";
+    z.style.left = "0px";
+}
+
+</script>
+{% endblock %}

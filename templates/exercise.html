@@ -1,0 +1,92 @@
+{% extends 'template.html'%} {% block content %}
+<div class="container">
+	<h2>{{ exercise.title }}</h2>
+</div>
+
+<div class="container">
+	<p>{{ exercise.description }}. The answer should be printed to stdout.</p>
+</div>
+
+<div class="container">
+	<form id="codeform" action="{{ url_for('exercise') }}" method="POST">
+		<div class="test-results">
+			{%if failed == 0%}
+			<p class="good-result">You passed all tests!</p>
+			<a class="btn btn-success" href="{{ url_for('index') }}"
+				>Back to exercises</a
+			>
+			{%elif failed > 0%}
+			<p class="bad-result">You failed on {{ failed }} tests</p>
+			{%endif%}
+		</div>
+		<label for="language"
+			><h5>Select your coding language (Choose one):</h5></label
+		><br />
+		<select
+			id="language_drop"
+			name="language"
+			form="codeform"
+			class="form-control"
+		>
+			<option value="Assembly (NASM 2.14.02)">Assembly (NASM 2.14.02)</option>
+			<option value="Bash (5.0.0)">Bash (5.0.0)</option>
+			<optgroup label="C">
+				<option value="C (GCC 7.4.0)">C (GCC 7.4.0)</option>
+				<option value="C (GCC 8.3.0)">C (GCC 8.3.0)</option>
+				<option value="C (GCC 9.2.0)">C (GCC 9.2.0)</option>
+			</optgroup>
+			<optgroup label="C++">
+				<option value="C++ (GCC 7.4.0)">C++ (GCC 7.4.0)</option>
+				<option value="C++ (GCC 8.3.0)">C++ (GCC 8.3.0)</option>
+				<option value="C++ (GCC 9.2.0)">C++ (GCC 9.2.0)</option>
+			</optgroup>
+			<option value="C# (Mono 6.6.0.161)">C# (Mono 6.6.0.161)</option>
+			<option value="Common Lisp (SBCL 2.0.0)">Common Lisp (SBCL 2.0.0)</option>
+			<option value="D (DMD 2.089.1)">D (DMD 2.089.1)</option>
+			<option value="Elixir (1.9.4)">Elixir (1.9.4)</option>
+			<option value="Erlang (OTP 22.2)">Erlang (OTP 22.2)</option>
+			<option value="Executable">Executable</option>
+			<option value="Fortran (GFortran 9.2.0)">Fortran (GFortran 9.2.0)</option>
+			<option value="Go (1.13.5)">Go (1.13.5)</option>
+			<option value="Haskell (GHC 8.8.1)">Haskell (GHC 8.8.1)</option>
+			<option value="Java (OpenJDK 13.0.1)">Java (OpenJDK 13.0.1)</option>
+			<option value="JavaScript (Node.js 12.14.0)">
+				JavaScript (Node.js 12.14.0)
+			</option>
+			<option value="Lua (5.3.5)">Lua (5.3.5)</option>
+			<option value="OCaml (4.09.0)">OCaml (4.09.0)</option>
+			<option value="Octave (5.1.0)">Octave (5.1.0)</option>
+			<option value="Pascal (FPC 3.0.4)">Pascal (FPC 3.0.4)</option>
+			<option value="PHP (7.4.1)">PHP (7.4.1)</option>
+			<option value="Plain Text">Plain Text</option>
+			<option value="Prolog (GNU Prolog 1.4.5)">
+				Prolog (GNU Prolog 1.4.5)
+			</option>
+			<option value="Python (2.7.17)">Python (2.7.17)</option>
+			<option value="Python (3.8.1)" selected="selected">Python (3.8.1)</option>
+			<option value="Ruby (2.7.0)">Ruby (2.7.0)</option>
+			<option value="Rust (1.40.0)">Rust (1.40.0)</option>
+			<option value="TypeScript (3.7.4)">TypeScript (3.7.4)</option>
+		</select>
+		<label for="answer"><h5>Type your solution below:</h5></label><br />
+		<textarea
+			class="form-control"
+			id="editor"
+			name="codearea"
+			form="codeform"
+			rows="60"
+			cols="160"
+			placeholder="Enter your code here..."
+		></textarea
+		><br />
+		<script>
+			var editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
+				mode: "python",
+				lineNumbers: true,
+			});
+		</script>
+		<button class="btn btn-default" type="submit">Submit</button>
+	</form>
+</div>
+
+{% endblock %}

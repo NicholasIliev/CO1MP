@@ -1,0 +1,38 @@
+{% extends 'template.html' %}
+{% block content %}
+<div class="table-wrapper">
+    <div class="table-title">
+        <div class="row">
+            <div class="col-sm-6"><h2><b>Leaderboard</b></h2></div>
+        </div>
+    </div>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Username</th>
+                <th>Points</th>
+            </tr>
+        </thead>
+    {% for index in range(ranking|length) %}
+    <tr>
+        <td>{{ index+1 }}</td>
+        <td>{{ ranking[index][0] }}</td>
+        <td>{{ ranking[index][1] }}</td>
+    </tr>
+    {% endfor %}
+    {% if user and not topbool%}
+    <tr>
+        <td><i class="bi bi-three-dots-vertical"></i></td>
+        <td><i class="bi bi-three-dots-vertical"></i></td>
+        <td><i class="bi bi-three-dots-vertical"></i></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>{{user[1]}}</td>
+        <td>{{user[5]}}</td>
+    </tr>
+    {% endif %}
+    </table>
+</div>
+{% endblock %}

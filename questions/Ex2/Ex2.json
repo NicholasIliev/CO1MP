@@ -1,0 +1,6 @@
+{
+	"id": 2,
+	"title": "Area Calculator",
+	"difficulty": "Easy",
+	"description": "Write a program which accepts the radius of a circle from the user and compute the area. You may assume that pi = 3.14 exactly"
+}

@@ -1,0 +1,60 @@
+{% extends 'template.html' %}
+{% block content %}
+<div class="table-wrapper">
+    <div class="table-title">
+        <div class="row">
+            <div class="col-sm-6"><h2><b>Exercises</b></h2></div>
+            <div class="col-sm-6">
+                <form id="filter" action="{{ url_for('index') }}", method="POST">
+                    <div class="btn-group" data-toggle="buttons">
+                        <input class="btn btn-primary" type="submit" name="status" value="All" checked="checked">
+                        <input class="btn btn-success" type="submit" name="status" value="Easy">
+                        <input class="btn btn-warning" type="submit" name="status" value="Medium">
+                        <input class="btn btn-danger" type="submit" name="status" value="Hard">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <form id=" action="{{ url_for('index') }}", method="POST">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Difficulty</th>
+                    <th>Exercise</th>
+                    {% if user %}
+                    <th>Completed</th>
+                    {% endif %}
+                    <th>Selection</th>
+                </tr>
+            </thead>
+        {% for exercise in exercises %}
+        {% if exercise.difficulty.lower() == difficulty.lower() or difficulty.lower() == "all" %}
+        <tr>
+            <td>{{ exercise.id }}</td>
+            {% if exercise.difficulty == "Easy" %}
+            <td><div class="label label-success">{{exercise.difficulty}}</div></td>
+            {% elif exercise.difficulty == "Medium" %}
+            <td><div class="label label-warning">{{exercise.difficulty}}</div></td>
+            {% elif exercise.difficulty == "Hard" %}
+            <td><div class="label label-danger">{{exercise.difficulty}}</div></td>
+            {% endif %}
+            <td>{{ exercise.title }}</td>
+            {% if user %}
+                {% if exercise.id|string + "|" in user[4] %}
+                <td>Completed <i style="color:gold" class="bi-trophy-fill"></i></td>
+                {% else %}
+                <td>Incomplete <i class="bi-trophy"></i></td>
+                {% endif %}
+            {% endif %}
+            <td>
+            <input class="btn btn-sm go" type="submit" name="go_button" value="Go: Ex{{exercise.id}}">
+            </td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        </table>
+    </form>
+</div>
+{% endblock %}

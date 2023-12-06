@@ -1,0 +1,38 @@
+{% extends 'template.html' %}
+{% block content %}
+    <div class="profile-container">
+        <img src="/static/images/cover.png" class="cover-img" alt="Generic Cover Image">
+        <div class="profile-details">
+            <div class="profile-details-left"> 
+                <div class="profile-details-row">
+                    <div>
+                        <h3>{{user[1]}}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="profile-info">
+            <div class="profile-info">
+                <div class="info-column">
+                    <div class="profile-bio">
+                        <h3>Progress</h3>
+                        <hr>
+                        <p class="bio-text"><h4>Points: {{user[5]}}</h4></p>
+                        
+                    </div>
+
+                    <div class="profile-bio">
+                        <div class="title-box">
+                            <h3>Global Ranking</h3>
+                            <a href="{{url_for('leaderboard')}}">Leaderboard</a>
+                        </div>
+                        <h4>Position: {{rank}}</h4>
+                        <div class="friends-box">
+                        </div>
+                </div> 
+            </div>
+        </div> 
+    </div> 
+</div>  
+{% endblock %}

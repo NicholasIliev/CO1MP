@@ -1,0 +1,6 @@
+{
+    "id": 6,
+    "title": "Unique Triplets",
+    "difficulty": "Medium",
+    "description": "Write a program to find unique triplets in an array who's sum is zero.\nThe output should be a string of indices separated by spaces, e.g. '1 3 4', or '-1' if the triplet set does not exist.\nAll inputs will be arrays of integers. The triplets do not need to be concurrent, for example given the array-string '[0, 2, -1, 1 ...]', the correct output should be '0 2 3'.\nIf multiple triplets exist, the priority should be given to the first indices being lowest."
+}

@@ -1,0 +1,6 @@
+{
+    "id": 8,
+    "title": "Integer Addition",
+    "difficulty": "Easy",
+    "description": "Write a program to calculate the sum of two given integers. The input will be of the form '1 2', and must output the integer '3'."
+}

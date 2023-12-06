@@ -1,0 +1,62 @@
+{% extends 'template.html' %}
+{% block content %}
+<section>
+    <h2 class="title">FAQs</h2>
+    <div class="faq">
+        <div class="question">
+            <h3>What are your terms and conditions?</h3>
+            <svg width="15" height="10" viewBox="0 0 42 25">
+                <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
+            </svg>
+        </div>
+        <div class="answer">
+            <p>
+                <strong>Click <a href={{ url_for('terms') }}>here</a> to view our Terms & Conditions.</strong>
+            </p>
+        </div>
+    </div>
+    <div class="faq">
+        <div class="question">
+            <h3>How do I know if I've gotten an exercise right?</h3>
+            <svg width="15" height="10" viewBox="0 0 42 25">
+                <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
+            </svg>
+        </div>
+        <div class="answer">
+            <p>
+                Once you have finished your exercise and want to know wether your answer is correct or not, you must click on the "submit" buttom - which is located just below the text editor. 
+                <br><br> 
+                Then if you have managed to get the correct answer, the message "You passed all tests!" shall be displayed on your screen.
+                <br><br>
+                However, if you get the answer wrong, meaning that there's a mistake in your code, the message "You failed on <X> tests" shall appear on your screen.
+            </p>
+        </div>
+    </div>
+    <div class="faq">
+        <div class="question">
+            <h3>How does the leaderboard work?</h3>
+            <svg width="15" height="10" viewBox="0 0 42 25">
+                <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
+            </svg>
+        </div>
+        <div class="answer">
+            <p>
+                The leaderboard uses a point system to determine the ranking of a user.
+                <br><br>
+                Based on the difficluty of the exercises you complete, and the number of exercises you complete correctly - we take the total of points that you have earned and hence we determine your global ranking. Each correct exercise grants a user a certain number of points. 
+                <br><br>
+                The point system works as follows:
+                <ol>
+                    <br>
+                    <li>&bull;  An <strong>'Easy'</strong> difficulty or a <strong>'Green'</strong> coloured exercise is worth: <strong>1 point</strong></li>
+                    <br>
+                    <li>&bull;  A <strong>'Medium'</strong> difficulty or an <strong>'Orange'</strong> coloured exercise is worth: <strong>2 points</strong></li>
+                    <br>
+                    <li>&bull;  A <strong>'Hard'</strong> difficulty or a <strong>'Red'</strong> coloured exercise is worth: <strong>3 points</strong></li>
+                </ol>
+            </p>
+        </div>
+    </div>
+</section>
+<script src="/static/javascript.js"></script>
+{% endblock %}

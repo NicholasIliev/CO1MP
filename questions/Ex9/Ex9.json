@@ -1,0 +1,6 @@
+{
+    "id": 9,
+    "title": "Perimeter and Area Differences",
+    "difficulty": "Medium",
+    "description": "Given the width and height of a rectangle, calculate the difference between its area and perimeter.\n\nThe inputs will be of the form of two floats, '1.1 2.2', and the output should be a float"
+}

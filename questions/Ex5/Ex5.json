@@ -1,0 +1,6 @@
+{
+	"id": 5,
+	"title": "Date Differences",
+	"difficulty": "Hard",
+	"description": "Write a program to calculate number of days between two dates\nAll inputs are given as two dates in the form DD/MM/YYYY with a comma and space separating them. For example: '11/03/2021, 12/03/2021' which should give the answer as 1"
+}

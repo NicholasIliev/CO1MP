@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename= 'images/comp_icon.ico')}}">
+    <script src="{{ url_for('static', filename= 'node_modules/codemirror/lib/codemirror.js') }}"></script>
+    <script src="{{ url_for('static', filename= 'node_modules/codemirror/mode/python/python.js')}}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'node_modules/codemirror/lib/codemirror.css') }}">  
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+</head>
+<body>
+
+<nav>
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <img src="static/images/COMP_log.png" class="logo" alt="Company Logo">
+        </div>
+        <ul class="nav navbar-nav">
+            <li>
+                <a class ="navbar-text" href={{ url_for("index") }}>Exercises</a>
+            </li>
+            <li>
+                <a class="navbar-text" href={{ url_for("leaderboard") }}>Leaderboard</a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            {% if not user %}
+            <li>
+                <a href={{ url_for('login') }}>
+                    <button type="button">Sign In</button>
+                </a>
+            </li>
+            {% else %}
+            <li>
+                <a class="navbar-text" href={{ url_for('profile') }}>Hello, {{user[1]}}</a>
+            </li>
+            {%endif%}
+            {% if user %}
+                <li>
+                <a href={{ url_for('profile') }}>
+                    <i style="font-size: 5rem" class="bi bi-person-circle"></i>
+                </a>
+                </li>
+                {% endif %}
+            <li>
+                <div class="dropdown">
+                    <input class="dropdownbtn" type="image" src="static/images/logo.png" alt="Company Image Dropdown">
+                    <div class="dropdown-content">
+                        <a href={{ url_for('help') }}>Help</a>
+                        {%if user%}
+                            <a href={{ url_for('logout') }}>Logout</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+{% block content %}{% endblock %}
+
+<!--- This is a wrapper just to stick the footer to the bottom of the page-->
+<div class="page-wrapper"></div>
+<div class="footer">
+<div class="footer-content"></div>
+<div class="footer-bottom"></div>
+</div>
+</body>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</html>

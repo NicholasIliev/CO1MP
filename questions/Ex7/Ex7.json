@@ -1,0 +1,6 @@
+{
+    "id": 7,
+    "title": "Median Calculator",
+    "difficulty": "Medium",
+    "description": "Write a program to calculate the median of an array of integers.\n\nThe output should be given as a float in all cases. If the list is empty, return 0. The input will be of the form '[1, 2, 3, 4, ...]'"
+}
