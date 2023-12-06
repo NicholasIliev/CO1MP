@@ -20,22 +20,27 @@ COM1P is designed to be a platform for coding enthusiasts to improve their probl
 - **Leaderboard:** Compete with others and track your progress on the leaderboard.
 - **User Profiles:** Keep track of your completed exercieses.
 
-## Getting Started
+## Dependencies
 
-To get started with COM1P, follow these steps:
+To run the COM1P application, make sure to install the following dependencies:
 
-1. **Clone the Repository:**
-   ```bash
-   git clone https://github.com/your-username/COM1P.git
-   cd COM1P
-   ```
-2. **Install Dependencies:**
+1. **Flask:**
    ```bash
    pip install flask
    ```
+2. **Mysql Connector Python:**
+   ```bash
+   pip install mysql-connector-python
+   ```
+3. **Requests:**
+   ```bash
+   pip install requests
+   ```
+## To Run
+
 3. **Run the Application:**
    ```bash
-   python main.py
+   flask run
    ```
 3. **Access the Platform:**
-   Open your web browser and navigate to http://localhost:8000 to access the COM1P platform.
+   Open your web browser and navigate to http://127.0.0.1:5000 to access the COM1P platform.
