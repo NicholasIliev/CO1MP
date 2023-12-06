@@ -1,6 +1,6 @@
-# COM1P - HackerRank/LeetCode Clone
+# CO1MP - HackerRank/LeetCode Clone
 
-COM1P is a collaborative project that aims to create a HackerRank/LeetCode clone, providing a platform for coding challenges, algorithm practice, and collaborative coding. This project is developed by the following contributors:
+CO1MP is a collaborative project that aims to create a HackerRank/LeetCode clone, providing a platform for coding challenges, algorithm practice, and collaborative coding. This project is developed by the following contributors:
 
 - Nicholas Iliev
 - Callum Chalmers
