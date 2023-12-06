@@ -18,9 +18,7 @@ COM1P is designed to be a platform for coding enthusiasts to improve their probl
 
 - **Coding Challenges:** Access a wide range of coding challenges to enhance your problem-solving skills.
 - **Leaderboard:** Compete with others and track your progress on the leaderboard.
-- **Collaborative Coding:** Work on challenges together with friends or the community.
-- **Discussion Forums:** Engage in discussions, share insights, and learn from fellow coders.
-- **User Profiles:** Showcase your coding achievements and progress through personalized user profiles.
+- **User Profiles:** Keep track of your completed exercieses.
 
 ## Getting Started
 
